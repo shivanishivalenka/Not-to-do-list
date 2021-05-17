@@ -5,16 +5,17 @@ const Search = (props) =>{
     const handelKeyPress = (e) =>{
         if (e.which === 13) {
             addItem()
+            setText('')
         }
     }
     return (
         <div>
-            <input type = "text" 
+            <input type = "text"
             value = {text}
             onChange = {(e)=>setText(e.target.value)}
             onKeyPress = {handelKeyPress}></input>
-            <button onClick = {addItem}
-            onKeyPress = {handelKeyPress}>ADD </button>
+            <button onClick = {addItem}>ADD </button>
+            {/* onKeyPress = {handelKeyPress} */}
             <p>{inputerror}</p>
         </div>
     )
