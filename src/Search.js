@@ -3,8 +3,8 @@
 const Search = (props) =>{
     const {addItem,text,setText,inputerror} = props;
     const handelKeyPress = (e) =>{
-        if (e.keyCode === 13) {
-            e.target.click();
+        if (e.which === 13) {
+            addItem()
         }
     }
     return (
@@ -13,7 +13,8 @@ const Search = (props) =>{
             value = {text}
             onChange = {(e)=>setText(e.target.value)}
             onKeyPress = {handelKeyPress}></input>
-            <button onClick = {addItem} >ADD </button>
+            <button onClick = {addItem}
+            onKeyPress = {handelKeyPress}>ADD </button>
             <p>{inputerror}</p>
         </div>
     )
